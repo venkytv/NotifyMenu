@@ -82,6 +82,7 @@ NSFileManager *fileManager;
         clearAllSelector = @selector(clearAll);
         [statusItem setImage:self.menuIcon];
         [statusItem setAlternateImage:self.highlightIcon];
+        [statusItem setLength:NSVariableStatusItemLength];
         for (NSUInteger i = 1; i <= count; i++) {
             NMenuItem *item = [self.items objectAtIndex:(i - 1)];
             NSMenuItem *menuItem = [menu addItemWithTitle:[item title]
@@ -92,6 +93,7 @@ NSFileManager *fileManager;
         [statusItem setImage:self.menuIconNoAlerts];
         [statusItem setAlternateImage:self.highlightIconNoAlerts];
         [menu addItemWithTitle:@"No Alerts" action:NULL keyEquivalent:@""];
+        [statusItem setLength:0];
     }
     [menu addItem:[NSMenuItem separatorItem]];
     [menu addItemWithTitle:@"Clear All" action:clearAllSelector keyEquivalent:@""];
