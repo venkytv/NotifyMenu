@@ -40,7 +40,6 @@ NSFileManager *fileManager;
 }
 
 - (void)menuAction:(id)sender {
-    NSLog(@"menuAction: %@: %@, %ld", sender, self.launcher, (long)[sender tag]);
     if (! [fileManager isExecutableFileAtPath:self.launcher]) {
         NSLog(@"Launcher not found: %@", self.launcher);
         return;
