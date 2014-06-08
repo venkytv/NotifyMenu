@@ -18,6 +18,8 @@
 		2523C4981944560200DD3BA1 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2523C4771944560200DD3BA1 /* Cocoa.framework */; };
 		2523C4A01944560300DD3BA1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2523C49E1944560300DD3BA1 /* InfoPlist.strings */; };
 		2523C4A21944560300DD3BA1 /* NotifyMenuTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2523C4A11944560300DD3BA1 /* NotifyMenuTests.m */; };
+		2523C4AD19445CAD00DD3BA1 /* NMenuScriptingInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = 2523C4AC19445CAD00DD3BA1 /* NMenuScriptingInterface.m */; };
+		2523C4AF19445D3000DD3BA1 /* Scripting.sdef in Resources */ = {isa = PBXBuildFile; fileRef = 2523C4AE19445D3000DD3BA1 /* Scripting.sdef */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +52,9 @@
 		2523C49D1944560300DD3BA1 /* NotifyMenuTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "NotifyMenuTests-Info.plist"; sourceTree = "<group>"; };
 		2523C49F1944560300DD3BA1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		2523C4A11944560300DD3BA1 /* NotifyMenuTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NotifyMenuTests.m; sourceTree = "<group>"; };
+		2523C4AB19445CAD00DD3BA1 /* NMenuScriptingInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NMenuScriptingInterface.h; sourceTree = "<group>"; };
+		2523C4AC19445CAD00DD3BA1 /* NMenuScriptingInterface.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NMenuScriptingInterface.m; sourceTree = "<group>"; };
+		2523C4AE19445D3000DD3BA1 /* Scripting.sdef */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Scripting.sdef; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +122,9 @@
 			children = (
 				2523C4891944560200DD3BA1 /* NMenuAppDelegate.h */,
 				2523C48A1944560200DD3BA1 /* NMenuAppDelegate.m */,
+				2523C4AB19445CAD00DD3BA1 /* NMenuScriptingInterface.h */,
+				2523C4AC19445CAD00DD3BA1 /* NMenuScriptingInterface.m */,
+				2523C4AE19445D3000DD3BA1 /* Scripting.sdef */,
 				2523C48C1944560200DD3BA1 /* MainMenu.xib */,
 				2523C48F1944560200DD3BA1 /* Images.xcassets */,
 				2523C47E1944560200DD3BA1 /* Supporting Files */,
@@ -234,6 +242,7 @@
 				2523C4821944560200DD3BA1 /* InfoPlist.strings in Resources */,
 				2523C4901944560200DD3BA1 /* Images.xcassets in Resources */,
 				2523C4881944560200DD3BA1 /* Credits.rtf in Resources */,
+				2523C4AF19445D3000DD3BA1 /* Scripting.sdef in Resources */,
 				2523C48E1944560200DD3BA1 /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -255,6 +264,7 @@
 			files = (
 				2523C48B1944560200DD3BA1 /* NMenuAppDelegate.m in Sources */,
 				2523C4841944560200DD3BA1 /* main.m in Sources */,
+				2523C4AD19445CAD00DD3BA1 /* NMenuScriptingInterface.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
