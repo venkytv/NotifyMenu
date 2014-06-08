@@ -23,15 +23,10 @@ CREDITS:
 This is my first attempt at Objective C programming.  The code based on a bunch
 of resources online, including:
 
-- Xcode 4.1 Tutorial - Create a menu bar application:
-  https://www.youtube.com/watch?v=HRPMFNDcfLY
-
-- https://github.com/chivalry/os-x-menu-bar-app
-
-- How do I add Applescript support to my Cocoa application?
-  http://stackoverflow.com/a/10773994
+- [Xcode 4.1 Tutorial - Create a menu bar application (YouTube)](https://www.youtube.com/watch?v=HRPMFNDcfLY)
+- [OS X Menu Bar App (GitHub)](https://github.com/chivalry/os-x-menu-bar-app)
+- [How do I add Applescript support to my Cocoa application? (StackOverflow)](http://stackoverflow.com/a/10773994)
 
 And Apple's Developer Documentation:
 
-- Implementing a Scriptable Application:
-  https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/ScriptableCocoaApplications/SApps_implement/SAppsImplement.html
+- [Implementing a Scriptable Application](https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/ScriptableCocoaApplications/SApps_implement/SAppsImplement.html)
