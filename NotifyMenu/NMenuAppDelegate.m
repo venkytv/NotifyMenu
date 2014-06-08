@@ -83,6 +83,9 @@ NSFileManager *fileManager;
         [statusItem setImage:self.menuIcon];
         [statusItem setAlternateImage:self.highlightIcon];
         [statusItem setLength:NSVariableStatusItemLength];
+        
+        NSString *tooltip = [[NSString alloc] initWithFormat:@" %lu alert%@ pending ", (unsigned long)count, (count != 1 ? @"s" : @"")];
+        [statusItem setToolTip:tooltip];
         for (NSUInteger i = 1; i <= count; i++) {
             NMenuItem *item = [self.items objectAtIndex:(i - 1)];
             NSMenuItem *menuItem = [menu addItemWithTitle:[item title]
@@ -93,6 +96,7 @@ NSFileManager *fileManager;
         [statusItem setImage:self.menuIconNoAlerts];
         [statusItem setAlternateImage:self.highlightIconNoAlerts];
         [menu addItemWithTitle:@"No Alerts" action:NULL keyEquivalent:@""];
+        [statusItem setToolTip:@""];
         [statusItem setLength:0];
     }
     [menu addItem:[NSMenuItem separatorItem]];
