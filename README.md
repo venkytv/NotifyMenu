@@ -19,6 +19,7 @@ available) as the second argument:
 ~/libexec/alert-handler
 
 CREDITS:
+--------
 
 This is my first attempt at Objective C programming.  The code based on a bunch
 of resources online, including:
