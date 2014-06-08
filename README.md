@@ -14,11 +14,11 @@ to the handler (below):
 
 $ osascript -e 'tell application "NotifyMenu" to add alert "Message" with handler "foo"'
 
-And on clicking the alert in the menu, the following command will be
-executed with the text of the alert as the first argument and the handler (if
-available) as the second argument:
+If an executable file named "notifymenu-alert-handler" is found in $HOME/libexec,
+on clicking the alert in the menu, the text of the alert will be passed to it as
+the first argument and the handler (if available) as the second:
 
-~/libexec/alert-handler
+~/libexec/notifymenu-alert-handler "message" "handler"
 
 ##### Credits:
 

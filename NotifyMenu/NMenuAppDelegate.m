@@ -18,7 +18,7 @@ NSFileManager *fileManager;
 - (id) init {
     fileManager = [[NSFileManager alloc] init];
 
-    self.launcher = [NSString stringWithFormat:@"%@/libexec/alert-handler",
+    self.launcher = [NSString stringWithFormat:@"%@/libexec/notifymenu-alert-handler",
                      [[[NSProcessInfo processInfo] environment] objectForKey:@"HOME" ]];
     self.items = [[NSMutableArray alloc] init];
     self.menuIcon       = [NSImage imageNamed:@"Alerts"];
@@ -40,26 +40,26 @@ NSFileManager *fileManager;
 }
 
 - (void)menuAction:(id)sender {
-    if (! [fileManager isExecutableFileAtPath:self.launcher]) {
-        NSLog(@"Launcher not found: %@", self.launcher);
-        return;
-    }
     
     NSUInteger index = [sender tag];
-    NSString *alertMessage, *alertHandler;
+    
     if (index > 0) {
         NMenuItem *item = [self.items objectAtIndex:(index - 1)];
         
-        alertMessage = [item message];
-        alertHandler = [item handler];
-        if (! alertHandler) alertHandler = @"";
+        if (! [fileManager isExecutableFileAtPath:self.launcher]) {
+            NSLog(@"Launcher not found: %@", self.launcher);
+        } else {
+            NSString *alertMessage, *alertHandler;
+            alertMessage = [item message];
+            alertHandler = [item handler];
+            if (! alertHandler) alertHandler = @"";
+            [NSTask launchedTaskWithLaunchPath:self.launcher
+                                     arguments:[NSArray arrayWithObjects:alertMessage, alertHandler, nil]];
+        }
         
         [self.items removeObject:item];
-        
         [self populateMenu];
-        
-        [NSTask launchedTaskWithLaunchPath:self.launcher
-                                 arguments:[NSArray arrayWithObjects:alertMessage, alertHandler, nil]];
+
     }
 
 }

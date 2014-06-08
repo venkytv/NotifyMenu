@@ -21,6 +21,7 @@
 		2523C4AD19445CAD00DD3BA1 /* NMenuScriptingInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = 2523C4AC19445CAD00DD3BA1 /* NMenuScriptingInterface.m */; };
 		2523C4AF19445D3000DD3BA1 /* Scripting.sdef in Resources */ = {isa = PBXBuildFile; fileRef = 2523C4AE19445D3000DD3BA1 /* Scripting.sdef */; };
 		2523C4B219446B8D00DD3BA1 /* NMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 2523C4B119446B8D00DD3BA1 /* NMenuItem.m */; };
+		2523C4B419448E7F00DD3BA1 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 2523C4B319448E7F00DD3BA1 /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,7 @@
 		2523C4AE19445D3000DD3BA1 /* Scripting.sdef */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Scripting.sdef; sourceTree = "<group>"; };
 		2523C4B019446B8D00DD3BA1 /* NMenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NMenuItem.h; sourceTree = "<group>"; };
 		2523C4B119446B8D00DD3BA1 /* NMenuItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NMenuItem.m; sourceTree = "<group>"; };
+		2523C4B319448E7F00DD3BA1 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +142,7 @@
 		2523C47E1944560200DD3BA1 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				2523C4B319448E7F00DD3BA1 /* README.md */,
 				2523C47F1944560200DD3BA1 /* NotifyMenu-Info.plist */,
 				2523C4801944560200DD3BA1 /* InfoPlist.strings */,
 				2523C4831944560200DD3BA1 /* main.m */,
@@ -244,6 +247,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2523C4B419448E7F00DD3BA1 /* README.md in Resources */,
 				2523C4821944560200DD3BA1 /* InfoPlist.strings in Resources */,
 				2523C4901944560200DD3BA1 /* Images.xcassets in Resources */,
 				2523C4881944560200DD3BA1 /* Credits.rtf in Resources */,
