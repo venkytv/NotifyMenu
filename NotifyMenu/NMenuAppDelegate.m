@@ -8,9 +8,15 @@
 
 #import "NMenuAppDelegate.h"
 
+//Globals
+NSFileManager *fileManager;
+
 @implementation NMenuAppDelegate
 
+
 - (id) init {
+    fileManager = [[NSFileManager alloc] init];
+
     self.launcher = [NSString stringWithFormat:@"%@/libexec/alert-handler",
                      [[[NSProcessInfo processInfo] environment] objectForKey:@"HOME" ]];
     self.items = [[NSMutableArray alloc] init];
@@ -34,6 +40,10 @@
 
 - (void)menuAction:(id)sender {
     NSLog(@"menuAction: %@: %@, %ld", sender, self.launcher, (long)[sender tag]);
+    if (! [fileManager isExecutableFileAtPath:self.launcher]) {
+        NSLog(@"Launcher not found: %@", self.launcher);
+        return;
+    }
     
     NSUInteger index = [sender tag];
     if (index > 0)
@@ -43,6 +53,7 @@
     
     [NSTask launchedTaskWithLaunchPath:self.launcher
                              arguments:[NSArray arrayWithObjects:[sender title], nil]];
+
 }
 
 - (void)clearAll {
