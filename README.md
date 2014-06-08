@@ -1,7 +1,7 @@
 NotifyMenu
 ==========
 
-Simple Mac OS X menu bar alert notifications
+##### Simple Mac OS X menu bar alert notifications
 
 You can add items to the notifications list using Applescript:
 
@@ -18,8 +18,7 @@ available) as the second argument:
 
 ~/libexec/alert-handler
 
-CREDITS:
---------
+##### Credits:
 
 This is my first attempt at Objective C programming.  The code based on a bunch
 of resources online, including:
