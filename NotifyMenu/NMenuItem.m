@@ -31,13 +31,7 @@
 }
 
 - (NSString *)title {
-    NSString *title;
-    if (!self.handler) {
-        title = self.message;
-    } else {
-        title = [[NSString alloc] initWithFormat:@"%@ (%@)", self.message, self.handler];
-    }
-    return title;
+    return self.message;
 }
 
 @end

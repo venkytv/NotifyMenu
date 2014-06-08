@@ -47,13 +47,21 @@ NSFileManager *fileManager;
     }
     
     NSUInteger index = [sender tag];
-    if (index > 0)
-        [self.items removeObjectAtIndex:(index - 1)];
-    
-    [self populateMenu];
-    
-    [NSTask launchedTaskWithLaunchPath:self.launcher
-                             arguments:[NSArray arrayWithObjects:[sender title], nil]];
+    NSString *alertMessage, *alertHandler;
+    if (index > 0) {
+        NMenuItem *item = [self.items objectAtIndex:(index - 1)];
+        
+        alertMessage = [item message];
+        alertHandler = [item handler];
+        if (! alertHandler) alertHandler = @"";
+        
+        [self.items removeObject:item];
+        
+        [self populateMenu];
+        
+        [NSTask launchedTaskWithLaunchPath:self.launcher
+                                 arguments:[NSArray arrayWithObjects:alertMessage, alertHandler, nil]];
+    }
 
 }
 
