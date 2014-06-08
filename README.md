@@ -32,3 +32,5 @@ of resources online, including:
 And Apple's Developer Documentation:
 
 - [Implementing a Scriptable Application](https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/ScriptableCocoaApplications/SApps_implement/SAppsImplement.html)
+
+Icons From [OpenClipArt.org](https://openclipart.org/detail/3743/warning-notification-by-zeimusu)

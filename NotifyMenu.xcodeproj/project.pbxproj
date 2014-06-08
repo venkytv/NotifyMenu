@@ -22,6 +22,7 @@
 		2523C4AF19445D3000DD3BA1 /* Scripting.sdef in Resources */ = {isa = PBXBuildFile; fileRef = 2523C4AE19445D3000DD3BA1 /* Scripting.sdef */; };
 		2523C4B219446B8D00DD3BA1 /* NMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 2523C4B119446B8D00DD3BA1 /* NMenuItem.m */; };
 		2523C4B419448E7F00DD3BA1 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 2523C4B319448E7F00DD3BA1 /* README.md */; };
+		2523C4B61944AECC00DD3BA1 /* zeimusu_Warning_notification.svg in Resources */ = {isa = PBXBuildFile; fileRef = 2523C4B51944AECC00DD3BA1 /* zeimusu_Warning_notification.svg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,7 @@
 		2523C4B019446B8D00DD3BA1 /* NMenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NMenuItem.h; sourceTree = "<group>"; };
 		2523C4B119446B8D00DD3BA1 /* NMenuItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NMenuItem.m; sourceTree = "<group>"; };
 		2523C4B319448E7F00DD3BA1 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = SOURCE_ROOT; };
+		2523C4B51944AECC00DD3BA1 /* zeimusu_Warning_notification.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = zeimusu_Warning_notification.svg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +150,7 @@
 				2523C4831944560200DD3BA1 /* main.m */,
 				2523C4851944560200DD3BA1 /* NotifyMenu-Prefix.pch */,
 				2523C4861944560200DD3BA1 /* Credits.rtf */,
+				2523C4B51944AECC00DD3BA1 /* zeimusu_Warning_notification.svg */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -252,6 +255,7 @@
 				2523C4901944560200DD3BA1 /* Images.xcassets in Resources */,
 				2523C4881944560200DD3BA1 /* Credits.rtf in Resources */,
 				2523C4AF19445D3000DD3BA1 /* Scripting.sdef in Resources */,
+				2523C4B61944AECC00DD3BA1 /* zeimusu_Warning_notification.svg in Resources */,
 				2523C48E1944560200DD3BA1 /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
