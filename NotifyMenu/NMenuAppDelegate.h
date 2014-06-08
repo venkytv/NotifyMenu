@@ -12,4 +12,16 @@
 
 @property (assign) IBOutlet NSWindow *window;
 
+@property (readwrite, retain) IBOutlet NSMenu *menu;
+@property (readwrite, retain) NSStatusItem *statusItem;
+@property (readwrite, retain) NSImage *menuIcon;
+@property (readwrite, retain) NSImage *highlightIcon;
+@property (readwrite, retain) NSImage *menuIconNoAlerts;
+@property (readwrite, retain) NSImage *highlightIconNoAlerts;
+@property (readwrite, retain) NSMutableArray *items;
+@property (readwrite, retain) NSString *launcher;
+
+- (void)menuAction:(id)sender;
+- (void)addAlert:(NSString *)message;
+
 @end
