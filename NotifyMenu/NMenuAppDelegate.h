@@ -22,6 +22,6 @@
 @property (readwrite, retain) NSString *launcher;
 
 - (void)menuAction:(id)sender;
-- (void)addAlert:(NSString *)message;
+- (void)addAlert:(NSString *)message handler:(NSString *)handler;
 
 @end

@@ -7,6 +7,7 @@
 //
 
 #import "NMenuAppDelegate.h"
+#import "NMenuItem.h"
 
 //Globals
 NSFileManager *fileManager;
@@ -74,9 +75,10 @@ NSFileManager *fileManager;
         [statusItem setImage:self.menuIcon];
         [statusItem setAlternateImage:self.highlightIcon];
         for (NSUInteger i = 1; i <= count; i++) {
-            NSMenuItem *item = [menu addItemWithTitle:(NSString *)[self.items objectAtIndex:(i - 1)]
+            NMenuItem *item = [self.items objectAtIndex:(i - 1)];
+            NSMenuItem *menuItem = [menu addItemWithTitle:[item title]
                                                action:@selector(menuAction:) keyEquivalent:@""];
-            [item setTag:i];
+            [menuItem setTag:i];
         }
     } else {
         [statusItem setImage:self.menuIconNoAlerts];
@@ -88,8 +90,9 @@ NSFileManager *fileManager;
     [menu addItemWithTitle:@"Quit" action:@selector(terminate:) keyEquivalent:@"q"];
 }
 
--(void)addAlert:(NSString *)message {
-    [self.items addObject:message];
+-(void)addAlert:(NSString *)message handler:(NSString *)handler {
+    NMenuItem *item = [[NMenuItem alloc] initWithMessage:message handler:handler];
+    [self.items addObject:item];
     [self populateMenu];
 }
 

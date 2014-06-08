@@ -3,11 +3,16 @@
 
 <dictionary title="NotifyMenu">
     <suite name="NotifyMenu Suite" code="NMNU" description="NotifyMenu Scripts">
-        <command name="add" code="nmnuadit" description="Add an alert item">
+        <command name="add alert" code="NMNUadit" description="Add an alert item">
             <cocoa class="NMenuScriptingInterface"/>
             <direct-parameter description="The message to add">
                 <type type="text"/>
+                <cocoa key="add"/>
             </direct-parameter>
+            <parameter name="with handler" code="adhn" type="text" optional="yes"
+                description="Optional handler for message">
+                <cocoa key="handler"/>
+            </parameter>
         </command>
     </suite>
 </dictionary>

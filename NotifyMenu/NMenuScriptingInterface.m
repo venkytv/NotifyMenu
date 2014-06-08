@@ -15,10 +15,11 @@
     NSString *currentCommand = [[self commandDescription] commandName];
     NSDictionary *args = [self evaluatedArguments];
     
-    if ([currentCommand isEqualToString:@"add"]) {
+    if ([currentCommand isEqualToString:@"add alert"]) {
         if (args.count) {
             NMenuAppDelegate *delegate = [NSApp delegate];
-            [delegate addAlert:[self directParameter]];
+            NSString *handler = [args valueForKey:@"handler"];
+            [delegate addAlert:[self directParameter] handler:handler];
         } else {
             [self setScriptErrorNumber:-50];
             [self setScriptErrorString:@"Expected item to add to alert list"];
