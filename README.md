@@ -3,6 +3,8 @@ NotifyMenu
 
 ##### Simple Mac OS X menu bar alert notifications
 
+![Sample](https://dl.dropboxusercontent.com/s/45bx6zlv57zmggp/Screenshot%202014-06-08%2014.07.24.png)
+
 You can add items to the notifications list using Applescript:
 
 $ osascript -e 'tell application "NotifyMenu" to add alert "Some message"'
