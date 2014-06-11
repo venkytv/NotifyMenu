@@ -20,7 +20,7 @@ the first argument and the handler (if available) as the second:
 
 ~/libexec/notifymenu-alert-handler "message" "handler"
 
-#### Downloads
+##### Downloads
 
 Download the application from the [Releases Page](https://github.com/venkytv/NotifyMenu/releases).
 
