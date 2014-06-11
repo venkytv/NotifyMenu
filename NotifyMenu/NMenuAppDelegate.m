@@ -105,6 +105,16 @@ NSFileManager *fileManager;
 
 -(void)addAlert:(NSString *)message handler:(NSString *)handler {
     NMenuItem *item = [[NMenuItem alloc] initWithMessage:message handler:handler];
+    
+    NMenuItem *duplicate = nil;
+    for (NMenuItem *existing in self.items) {
+        if ([existing isEqualToMenuItem:item]) {
+            duplicate = existing;
+        }
+    }
+    if (duplicate)
+        [self.items removeObject:duplicate];
+    
     [self.items addObject:item];
     [self populateMenu];
 }

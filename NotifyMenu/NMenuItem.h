@@ -16,6 +16,8 @@
 - (id)initWithMessage:(NSString *)message;
 - (id)initWithMessage:(NSString *)message handler:(NSString *)handler;
 
+- (BOOL)isEqualToMenuItem:(NMenuItem *)item;
+
 - (NSString *)title;
 
 @end
