@@ -20,6 +20,10 @@ the first argument and the handler (if available) as the second:
 
 ~/libexec/notifymenu-alert-handler "message" "handler"
 
+#### Downloads
+
+Download the application from the [Releases Page](https://github.com/venkytv/NotifyMenu/releases).
+
 ##### Credits:
 
 This is my first attempt at Objective C programming.  The code based on a bunch
