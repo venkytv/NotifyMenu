@@ -98,14 +98,12 @@ NSString *const DISPLAY_HANDLERS        = @"DisplayHandlers";
         
         NSString *tooltip = [[NSString alloc] initWithFormat:@" %lu alert%@ pending ", (unsigned long)count, (count != 1 ? @"s" : @"")];
         [statusItem setToolTip:tooltip];
+        
+        BOOL withHandler = [[NSUserDefaults standardUserDefaults] boolForKey:DISPLAY_HANDLERS];
+        
         for (NSUInteger i = 1; i <= count; i++) {
             NMenuItem *item = [self.items objectAtIndex:(i - 1)];
-            NSString *title;
-            if ([[NSUserDefaults standardUserDefaults] boolForKey:DISPLAY_HANDLERS]) {
-                title = item.titleWithHandler;
-            } else {
-                title = item.title;
-            }
+            NSString *title = (withHandler ? item.titleWithHandler : item.title);
             NSMenuItem *menuItem = [menu addItemWithTitle:title
                                                action:@selector(menuAction:) keyEquivalent:@""];
             [menuItem setTag:i];
