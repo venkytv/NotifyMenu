@@ -20,6 +20,17 @@ the first argument and the handler (if available) as the second:
 
 ~/libexec/notifymenu-alert-handler "message" "handler"
 
+#### Configuration
+
+- Duplicate alerts (with the same message and handler) are suppressed by default. To change this:  
+  `defaults write com.duh-uh.NotifyMenu SuppressDuplicates -bool no`
+- To hide the menu bar icon when there are no pending alerts:  
+  `defaults write com.duh-uh.NotifyMenu HideIconWhenEmpty -bool yes`
+- To turn off display of handlers (when present) in the titles:  
+  `defaults write com.duh-uh.NotifyMenu DisplayHandlers -bool no`
+
+Configuration changes take effect with the next action that is performed, i.e., adding or removing an alert from the list.  With `SuppressDuplicates`, it is slightly more complicated.  You might just want to restart the application. 
+
 ##### Downloads
 
 Download the application from the [Releases Page](https://github.com/venkytv/NotifyMenu/releases).
