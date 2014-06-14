@@ -29,7 +29,7 @@ the first argument and the handler (if available) as the second:
 - To turn off display of handlers (when present) in the titles:  
   `defaults write com.duh-uh.NotifyMenu DisplayHandlers -bool no`
 
-Configuration changes take effect with the next action that is performed, i.e., adding or removing an alert from the list.  With `SuppressDuplicates`, it is slightly more complicated.  You might just want to restart the application. 
+Configuration changes take effect with the next action that is performed, i.e., adding or removing an alert from the list.  With `SuppressDuplicates`, it is slightly more complicated.  Duplicates of an item get cleared only when you add *another* item which qualifies as a duplicate.  (Yeah, this needs to be fixed.) 
 
 ##### Downloads
 
