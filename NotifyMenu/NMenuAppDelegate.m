@@ -12,6 +12,10 @@
 //Globals
 NSFileManager *fileManager;
 
+NSString *const HIDE_ICON_WHEN_EMPTY    = @"HideIconWhenEmpty";
+NSString *const SUPPRESS_DUPLICATES     = @"SuppressDuplicates";
+NSString *const DISPLAY_HANDLERS        = @"DisplayHandlers";
+
 @implementation NMenuAppDelegate
 
 
@@ -37,6 +41,15 @@ NSFileManager *fileManager;
     [myStatusItem setHighlightMode:YES];
     
     [self populateMenu];
+}
+
+- (void)applicationDidFinishLaunching:(NSNotification *)notification {
+    NSDictionary *appDefaults = [NSDictionary dictionaryWithObjectsAndKeys:
+                                 [NSNumber numberWithBool:NO], HIDE_ICON_WHEN_EMPTY,
+                                 [NSNumber numberWithBool:YES], SUPPRESS_DUPLICATES,
+                                 [NSNumber numberWithBool:YES], DISPLAY_HANDLERS,
+                                 nil];
+    [[NSUserDefaults standardUserDefaults] registerDefaults:appDefaults];
 }
 
 - (void)menuAction:(id)sender {
@@ -87,7 +100,13 @@ NSFileManager *fileManager;
         [statusItem setToolTip:tooltip];
         for (NSUInteger i = 1; i <= count; i++) {
             NMenuItem *item = [self.items objectAtIndex:(i - 1)];
-            NSMenuItem *menuItem = [menu addItemWithTitle:[item title]
+            NSString *title;
+            if ([[NSUserDefaults standardUserDefaults] boolForKey:DISPLAY_HANDLERS]) {
+                title = item.titleWithHandler;
+            } else {
+                title = item.title;
+            }
+            NSMenuItem *menuItem = [menu addItemWithTitle:title
                                                action:@selector(menuAction:) keyEquivalent:@""];
             [menuItem setTag:i];
         }
@@ -96,7 +115,9 @@ NSFileManager *fileManager;
         [statusItem setAlternateImage:self.highlightIconNoAlerts];
         [menu addItemWithTitle:@"No Alerts" action:NULL keyEquivalent:@""];
         [statusItem setToolTip:@""];
-        [statusItem setLength:0];
+        if ([[NSUserDefaults standardUserDefaults] boolForKey:HIDE_ICON_WHEN_EMPTY]) {
+            [statusItem setLength:0];
+        }
     }
     [menu addItem:[NSMenuItem separatorItem]];
     [menu addItemWithTitle:@"Clear All" action:clearAllSelector keyEquivalent:@""];
@@ -106,14 +127,16 @@ NSFileManager *fileManager;
 -(void)addAlert:(NSString *)message handler:(NSString *)handler {
     NMenuItem *item = [[NMenuItem alloc] initWithMessage:message handler:handler];
     
-    NMenuItem *duplicate = nil;
-    for (NMenuItem *existing in self.items) {
-        if ([existing isEqualToMenuItem:item]) {
-            duplicate = existing;
+    if ([[NSUserDefaults standardUserDefaults] boolForKey:SUPPRESS_DUPLICATES]) {
+        NSMutableArray *duplicates = [[NSMutableArray alloc] init];
+        for (NMenuItem *existing in self.items) {
+            if ([existing isEqualToMenuItem:item]) {
+                [duplicates addObject:existing];
+            }
         }
+        for (NMenuItem *duplicate in duplicates)
+            [self.items removeObject:duplicate];
     }
-    if (duplicate)
-        [self.items removeObject:duplicate];
     
     [self.items addObject:item];
     [self populateMenu];

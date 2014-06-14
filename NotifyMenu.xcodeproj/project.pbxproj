@@ -491,6 +491,7 @@
 				2523C4A71944560300DD3BA1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2523C4A81944560300DD3BA1 /* Build configuration list for PBXNativeTarget "NotifyMenuTests" */ = {
 			isa = XCConfigurationList;
@@ -499,6 +500,7 @@
 				2523C4AA1944560300DD3BA1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

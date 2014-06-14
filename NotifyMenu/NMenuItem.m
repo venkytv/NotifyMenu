@@ -58,4 +58,10 @@
     return self.message;
 }
 
+- (NSString *)titleWithHandler {
+    if (self.handler == (id)[NSNull null] || self.handler.length == 0)
+        return self.message;
+    return [NSString stringWithFormat:@"%@ (%@)", self.message, self.handler];
+}
+
 @end

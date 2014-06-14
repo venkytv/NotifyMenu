@@ -19,5 +19,6 @@
 - (BOOL)isEqualToMenuItem:(NMenuItem *)item;
 
 - (NSString *)title;
+- (NSString *)titleWithHandler;
 
 @end
