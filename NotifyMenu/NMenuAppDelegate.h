@@ -18,8 +18,13 @@
 @property (readwrite, retain) NSImage *highlightIcon;
 @property (readwrite, retain) NSImage *menuIconNoAlerts;
 @property (readwrite, retain) NSImage *highlightIconNoAlerts;
-@property (readwrite, retain) NSMutableArray *items;
 @property (readwrite, retain) NSString *launcher;
+
+@property (readonly, strong, nonatomic) NSManagedObjectContext *managedObjectContext;
+@property (readonly, strong, nonatomic) NSManagedObjectModel *managedObjectModel;
+@property (readonly, strong, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator;
+
+- (IBAction)saveAction:(id)sender;
 
 - (void)menuAction:(id)sender;
 - (void)addAlert:(NSString *)message handler:(NSString *)handler;

@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2501A4BC194CC76400D1C01C /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2523C47B1944560200DD3BA1 /* CoreData.framework */; };
+		2501A4BF194CC7E600D1C01C /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2501A4BD194CC7E600D1C01C /* Model.xcdatamodeld */; };
+		2501A4C2194CD1DD00D1C01C /* Alert.m in Sources */ = {isa = PBXBuildFile; fileRef = 2501A4C1194CD1DD00D1C01C /* Alert.m */; };
 		2523C4781944560200DD3BA1 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2523C4771944560200DD3BA1 /* Cocoa.framework */; };
 		2523C4821944560200DD3BA1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2523C4801944560200DD3BA1 /* InfoPlist.strings */; };
 		2523C4841944560200DD3BA1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2523C4831944560200DD3BA1 /* main.m */; };
@@ -20,7 +23,6 @@
 		2523C4A21944560300DD3BA1 /* NotifyMenuTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2523C4A11944560300DD3BA1 /* NotifyMenuTests.m */; };
 		2523C4AD19445CAD00DD3BA1 /* NMenuScriptingInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = 2523C4AC19445CAD00DD3BA1 /* NMenuScriptingInterface.m */; };
 		2523C4AF19445D3000DD3BA1 /* Scripting.sdef in Resources */ = {isa = PBXBuildFile; fileRef = 2523C4AE19445D3000DD3BA1 /* Scripting.sdef */; };
-		2523C4B219446B8D00DD3BA1 /* NMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 2523C4B119446B8D00DD3BA1 /* NMenuItem.m */; };
 		2523C4B419448E7F00DD3BA1 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 2523C4B319448E7F00DD3BA1 /* README.md */; };
 		2523C4B61944AECC00DD3BA1 /* zeimusu_Warning_notification.svg in Resources */ = {isa = PBXBuildFile; fileRef = 2523C4B51944AECC00DD3BA1 /* zeimusu_Warning_notification.svg */; };
 /* End PBXBuildFile section */
@@ -36,6 +38,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2501A4BE194CC7E600D1C01C /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		2501A4C0194CD1DD00D1C01C /* Alert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Alert.h; sourceTree = "<group>"; };
+		2501A4C1194CD1DD00D1C01C /* Alert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Alert.m; sourceTree = "<group>"; };
+		2501A4C3194CE47000D1C01C /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		2523C4741944560200DD3BA1 /* NotifyMenu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NotifyMenu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2523C4771944560200DD3BA1 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		2523C47A1944560200DD3BA1 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -58,8 +64,6 @@
 		2523C4AB19445CAD00DD3BA1 /* NMenuScriptingInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NMenuScriptingInterface.h; sourceTree = "<group>"; };
 		2523C4AC19445CAD00DD3BA1 /* NMenuScriptingInterface.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NMenuScriptingInterface.m; sourceTree = "<group>"; };
 		2523C4AE19445D3000DD3BA1 /* Scripting.sdef */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Scripting.sdef; sourceTree = "<group>"; };
-		2523C4B019446B8D00DD3BA1 /* NMenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NMenuItem.h; sourceTree = "<group>"; };
-		2523C4B119446B8D00DD3BA1 /* NMenuItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NMenuItem.m; sourceTree = "<group>"; };
 		2523C4B319448E7F00DD3BA1 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = SOURCE_ROOT; };
 		2523C4B51944AECC00DD3BA1 /* zeimusu_Warning_notification.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = zeimusu_Warning_notification.svg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -69,6 +73,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2501A4BC194CC76400D1C01C /* CoreData.framework in Frameworks */,
 				2523C4781944560200DD3BA1 /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -127,10 +132,11 @@
 		2523C47D1944560200DD3BA1 /* NotifyMenu */ = {
 			isa = PBXGroup;
 			children = (
+				2501A4C3194CE47000D1C01C /* Constants.h */,
 				2523C4891944560200DD3BA1 /* NMenuAppDelegate.h */,
 				2523C48A1944560200DD3BA1 /* NMenuAppDelegate.m */,
-				2523C4B019446B8D00DD3BA1 /* NMenuItem.h */,
-				2523C4B119446B8D00DD3BA1 /* NMenuItem.m */,
+				2501A4C0194CD1DD00D1C01C /* Alert.h */,
+				2501A4C1194CD1DD00D1C01C /* Alert.m */,
 				2523C4AB19445CAD00DD3BA1 /* NMenuScriptingInterface.h */,
 				2523C4AC19445CAD00DD3BA1 /* NMenuScriptingInterface.m */,
 				2523C4AE19445D3000DD3BA1 /* Scripting.sdef */,
@@ -149,6 +155,7 @@
 				2523C4801944560200DD3BA1 /* InfoPlist.strings */,
 				2523C4831944560200DD3BA1 /* main.m */,
 				2523C4851944560200DD3BA1 /* NotifyMenu-Prefix.pch */,
+				2501A4BD194CC7E600D1C01C /* Model.xcdatamodeld */,
 				2523C4861944560200DD3BA1 /* Credits.rtf */,
 				2523C4B51944AECC00DD3BA1 /* zeimusu_Warning_notification.svg */,
 			);
@@ -275,8 +282,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2523C4B219446B8D00DD3BA1 /* NMenuItem.m in Sources */,
+				2501A4C2194CD1DD00D1C01C /* Alert.m in Sources */,
 				2523C48B1944560200DD3BA1 /* NMenuAppDelegate.m in Sources */,
+				2501A4BF194CC7E600D1C01C /* Model.xcdatamodeld in Sources */,
 				2523C4841944560200DD3BA1 /* main.m in Sources */,
 				2523C4AD19445CAD00DD3BA1 /* NMenuScriptingInterface.m in Sources */,
 			);
@@ -503,6 +511,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		2501A4BD194CC7E600D1C01C /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				2501A4BE194CC7E600D1C01C /* Model.xcdatamodel */,
+			);
+			currentVersion = 2501A4BE194CC7E600D1C01C /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 2523C46C1944560200DD3BA1 /* Project object */;
 }
