@@ -3,7 +3,7 @@ NotifyMenu
 
 ##### Simple Mac OS X menu bar alert notifications
 
-![Sample](https://dl.dropboxusercontent.com/s/45bx6zlv57zmggp/Screenshot%202014-06-08%2014.07.24.png)
+![Sample](https://dl.dropboxusercontent.com/s/je4pjpt8kaptvx7/Screenshot%202014-06-15%2009.26.44.png)
 
 You can add items to the notifications list using Applescript:
 
