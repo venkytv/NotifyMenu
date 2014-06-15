@@ -16,6 +16,7 @@ NSFileManager *fileManager;
 NSString *const HIDE_ICON_WHEN_EMPTY    = @"HideIconWhenEmpty";
 NSString *const SUPPRESS_DUPLICATES     = @"SuppressDuplicates";
 NSString *const DISPLAY_HANDLERS        = @"DisplayHandlers";
+NSString *const NEWEST_ON_TOP           = @"NewestOnTop";
 
 NSString *const ALERT_ENTITY            = @"Alert";
 
@@ -53,6 +54,7 @@ NSString *const ALERT_ENTITY            = @"Alert";
                                  [NSNumber numberWithBool:NO], HIDE_ICON_WHEN_EMPTY,
                                  [NSNumber numberWithBool:YES], SUPPRESS_DUPLICATES,
                                  [NSNumber numberWithBool:YES], DISPLAY_HANDLERS,
+                                 [NSNumber numberWithBool:NO], NEWEST_ON_TOP,
                                  nil];
     [[NSUserDefaults standardUserDefaults] registerDefaults:appDefaults];
 }
@@ -141,6 +143,7 @@ NSString *const ALERT_ENTITY            = @"Alert";
                                                 inManagedObjectContext:context];
     item.title = message;
     item.handler = handler;
+    item.when = [NSDate date];
     
     if ([[NSUserDefaults standardUserDefaults] boolForKey:SUPPRESS_DUPLICATES]) {
         NSMutableArray *duplicates = [[NSMutableArray alloc] init];
@@ -172,7 +175,10 @@ NSString *const ALERT_ENTITY            = @"Alert";
     if (!items) {
         NSLog(@"Error fetching all alerts: %@", [error localizedDescription]);
     }
-    return items;
+    BOOL ascending = ! [[NSUserDefaults standardUserDefaults] boolForKey:NEWEST_ON_TOP];
+    NSSortDescriptor *sortByDate = [NSSortDescriptor sortDescriptorWithKey:@"when"
+                                                                 ascending:ascending];
+    return [items sortedArrayUsingDescriptors:@[ sortByDate ]];
 }
 
 - (void)removeAlert:(Alert *)alert {
@@ -250,7 +256,11 @@ NSString *const ALERT_ENTITY            = @"Alert";
     
     NSURL *url = [applicationFilesDirectory URLByAppendingPathComponent:@"NotifyMenu.storedata"];
     NSPersistentStoreCoordinator *coordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:mom];
-    if (![coordinator addPersistentStoreWithType:NSXMLStoreType configuration:nil URL:url options:nil error:&error]) {
+    NSDictionary *options = @{
+                              NSMigratePersistentStoresAutomaticallyOption : @YES,
+                              NSInferMappingModelAutomaticallyOption : @YES
+                              };
+    if (![coordinator addPersistentStoreWithType:NSXMLStoreType configuration:nil URL:url options:options error:&error]) {
         [[NSApplication sharedApplication] presentError:error];
         return nil;
     }

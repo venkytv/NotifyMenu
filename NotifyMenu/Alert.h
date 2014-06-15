@@ -14,6 +14,7 @@
 
 @property (nonatomic, retain) NSString * title;
 @property (nonatomic, retain) NSString * handler;
+@property (nonatomic, retain) NSDate *when;
 
 - (BOOL)isEqualToAlert:(Alert *)item;
 - (NSString *)titleWithHandler;

@@ -66,6 +66,7 @@
 		2523C4AE19445D3000DD3BA1 /* Scripting.sdef */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Scripting.sdef; sourceTree = "<group>"; };
 		2523C4B319448E7F00DD3BA1 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = SOURCE_ROOT; };
 		2523C4B51944AECC00DD3BA1 /* zeimusu_Warning_notification.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = zeimusu_Warning_notification.svg; sourceTree = "<group>"; };
+		259CC065194D76960003522F /* Model 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Model 2.xcdatamodel"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -516,9 +517,10 @@
 		2501A4BD194CC7E600D1C01C /* Model.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				259CC065194D76960003522F /* Model 2.xcdatamodel */,
 				2501A4BE194CC7E600D1C01C /* Model.xcdatamodel */,
 			);
-			currentVersion = 2501A4BE194CC7E600D1C01C /* Model.xcdatamodel */;
+			currentVersion = 259CC065194D76960003522F /* Model 2.xcdatamodel */;
 			path = Model.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

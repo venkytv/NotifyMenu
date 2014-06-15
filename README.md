@@ -28,6 +28,8 @@ the first argument and the handler (if available) as the second:
   `defaults write com.duh-uh.NotifyMenu HideIconWhenEmpty -bool yes`
 - To turn off display of handlers (when present) in the titles:  
   `defaults write com.duh-uh.NotifyMenu DisplayHandlers -bool no`
+- Alerts are ordered with the oldest on top. To switch that around:
+  `defaults write com.duh-uh.NotifyMenu NewestOnTop -bool yes`
 
 Configuration changes take effect with the next action that is performed, i.e., adding or removing an alert from the list.  With `SuppressDuplicates`, it is slightly more complicated.  Duplicates of an item get cleared only when you add *another* item which qualifies as a duplicate.  (Yeah, this needs to be fixed.) 
 

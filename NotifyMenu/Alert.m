@@ -13,6 +13,7 @@
 
 @dynamic title;
 @dynamic handler;
+@dynamic when;
 
 - (BOOL)isEqualToAlert:(Alert *)item {
     if (!item) return NO;
