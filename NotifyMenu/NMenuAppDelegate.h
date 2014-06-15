@@ -18,7 +18,6 @@
 @property (readwrite, retain) NSImage *highlightIcon;
 @property (readwrite, retain) NSImage *menuIconNoAlerts;
 @property (readwrite, retain) NSImage *highlightIconNoAlerts;
-@property (readwrite, retain) NSString *launcher;
 
 @property (readonly, strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 @property (readonly, strong, nonatomic) NSManagedObjectModel *managedObjectModel;

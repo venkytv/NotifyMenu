@@ -30,6 +30,8 @@ the first argument and the handler (if available) as the second:
   `defaults write com.duh-uh.NotifyMenu DisplayHandlers -bool no`
 - Alerts are ordered with the oldest on top. To switch that around:  
   `defaults write com.duh-uh.NotifyMenu NewestOnTop -bool yes`
+- To change the handler path from the default of ~/libexec/notifymenu-alert-handler:  
+  `defaults write com.duh-uh.NotifyMenu Handler -string /new/path/to/handler`
 
 Configuration changes take effect with the next action that is performed, i.e., adding or removing an alert from the list.  With `SuppressDuplicates`, it is slightly more complicated.  Duplicates of an item get cleared only when you add *another* item which qualifies as its duplicate.  (Yeah, that needs to be fixed.) 
 

@@ -17,6 +17,7 @@ NSString *const HIDE_ICON_WHEN_EMPTY    = @"HideIconWhenEmpty";
 NSString *const SUPPRESS_DUPLICATES     = @"SuppressDuplicates";
 NSString *const DISPLAY_HANDLERS        = @"DisplayHandlers";
 NSString *const NEWEST_ON_TOP           = @"NewestOnTop";
+NSString *const HANDLER_PATH            = @"Handler";
 
 NSString *const ALERT_ENTITY            = @"Alert";
 
@@ -29,8 +30,6 @@ NSString *const ALERT_ENTITY            = @"Alert";
 - (id) init {
     fileManager = [[NSFileManager alloc] init];
 
-    self.launcher = [NSString stringWithFormat:@"%@/libexec/notifymenu-alert-handler",
-                     [[[NSProcessInfo processInfo] environment] objectForKey:@"HOME" ]];
     self.menuIcon       = [NSImage imageNamed:@"Alerts"];
     self.highlightIcon  = self.menuIcon;
     self.menuIconNoAlerts = [NSImage imageNamed:@"No Alerts"];
@@ -50,11 +49,14 @@ NSString *const ALERT_ENTITY            = @"Alert";
 }
 
 - (void)applicationDidFinishLaunching:(NSNotification *)notification {
+    NSString *default_handler = [NSString stringWithFormat:@"%@/libexec/notifymenu-alert-handler",
+                                 [[[NSProcessInfo processInfo] environment] objectForKey:@"HOME" ]];
     NSDictionary *appDefaults = [NSDictionary dictionaryWithObjectsAndKeys:
                                  [NSNumber numberWithBool:NO], HIDE_ICON_WHEN_EMPTY,
                                  [NSNumber numberWithBool:YES], SUPPRESS_DUPLICATES,
                                  [NSNumber numberWithBool:YES], DISPLAY_HANDLERS,
                                  [NSNumber numberWithBool:NO], NEWEST_ON_TOP,
+                                 default_handler, HANDLER_PATH,
                                  nil];
     [[NSUserDefaults standardUserDefaults] registerDefaults:appDefaults];
 }
@@ -64,17 +66,19 @@ NSString *const ALERT_ENTITY            = @"Alert";
     NSUInteger index = [sender tag];
     NSArray *items = [self allAlerts];
     
+    NSString *launcher = [[NSUserDefaults standardUserDefaults] stringForKey:HANDLER_PATH];
+   
     if (index > 0) {
         Alert *item = [items objectAtIndex:(index - 1)];
         
-        if (! [fileManager isExecutableFileAtPath:self.launcher]) {
-            NSLog(@"Launcher not found: %@", self.launcher);
+        if (! [fileManager isExecutableFileAtPath:launcher]) {
+            NSLog(@"Launcher not found: %@", launcher);
         } else {
             NSString *alertMessage, *alertHandler;
             alertMessage = item.title;
             alertHandler = item.handler;
             if (! alertHandler) alertHandler = @"";
-            [NSTask launchedTaskWithLaunchPath:self.launcher
+            [NSTask launchedTaskWithLaunchPath:launcher
                                      arguments:[NSArray arrayWithObjects:alertMessage, alertHandler, nil]];
         }
         
